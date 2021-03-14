@@ -1,4 +1,5 @@
 from math import pi
+from math import sqrt
 
 
 def ask_for(prompt, error_msg=None, _type=None):
@@ -45,27 +46,39 @@ def cone_volume(height, radius):
     return volume
 
 
+def square_root(root):
+    return print(f'\nThe root number is: {sqrt(root)}')
+
+
 if __name__ == "__main__":
     print('\n***** Start *****')
 
     def main():
 
-        # * Global values to prevent code repetition
-        user_height = ask_for('\nWhat is the height?: ',
-                              'Not an integer or decimal.', float)
-
-        user_radius = ask_for('\nWhat is the radius?: ',
-                              'Not an integer or decimal.', float)
-
         # Checking which volume calculation the user wants
-        print('\nVolume of a cylinder or cone? ( CYL for cylinder, CONE for cone)')
+        print('\nVolume of a cylinder or cone? ( CYL for cylinder, CONE for cone. SQRT for square root. Case sensitive.)')
         which_volume = ask_for('\n: ', 'Wrong input', str).upper()
 
         if which_volume == 'CYL':
+            user_height = ask_for('\nWhat is the height?: ',
+                                  'Not an integer or decimal.', float)
+
+            user_radius = ask_for('\nWhat is the radius?: ',
+                                  'Not an integer or decimal.', float)
             cyl_volume(user_height, user_radius)
 
         if which_volume == 'CONE':
+            user_height = ask_for('\nWhat is the height?: ',
+                                  'Not an integer or decimal.', float)
+
+            user_radius = ask_for('\nWhat is the radius?: ',
+                                  'Not an integer or decimal.', float)
             cone_volume(user_height, user_radius)
+
+        if which_volume == 'SQRT':
+            print('\nWhat is the root?')
+            root_num = ask_for('\n: ', 'Not a number', float)
+            square_root(root_num)
 
     # * Calling main function
     main()
