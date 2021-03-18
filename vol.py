@@ -46,10 +46,6 @@ def cone_volume(height, radius):
     return volume
 
 
-def square_root(root):
-    return print(f'\nThe root number is: {sqrt(root)}')
-
-
 def hypotenuse(a, b):
     return print(f'\nThe hypotenuse of the triangle or C is: {sqrt(a**2+b**2)}')
 
@@ -82,7 +78,7 @@ if __name__ == "__main__":
         if which_calc == 'SQRT':
             print('\nWhat is the root?')
             root_num = ask_for('\n: ', 'Not a number', float)
-            square_root(root_num)
+            print(f'The square root is: {sqrt(root_num)}')
 
         if which_calc == 'HYPOTEN':
             print('\nWhat is A and B?')
