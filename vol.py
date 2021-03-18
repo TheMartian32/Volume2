@@ -50,16 +50,20 @@ def square_root(root):
     return print(f'\nThe root number is: {sqrt(root)}')
 
 
+def hypotenuse(a, b):
+    return print(f'\nThe hypotenuse of the triangle or C is: {sqrt(a**2+b**2)}')
+
+
 if __name__ == "__main__":
     print('\n***** Start *****')
 
     def main():
 
         # Checking which volume calculation the user wants
-        print('\nVolume of a cylinder or cone? ( CYL for cylinder, CONE for cone. SQRT for square root. Case sensitive.)')
-        which_volume = ask_for('\n: ', 'Wrong input', str).upper()
+        print('\n Input the type of calculation ( CYL for cylinder, CONE for cone. SQRT for square root. HYPOTEN for hypotenuse)')
+        which_calc = ask_for('\n: ', 'Wrong input', str).upper()
 
-        if which_volume == 'CYL':
+        if which_calc == 'CYL':
             user_height = ask_for('\nWhat is the height?: ',
                                   'Not an integer or decimal.', float)
 
@@ -67,7 +71,7 @@ if __name__ == "__main__":
                                   'Not an integer or decimal.', float)
             cyl_volume(user_height, user_radius)
 
-        if which_volume == 'CONE':
+        if which_calc == 'CONE':
             user_height = ask_for('\nWhat is the height?: ',
                                   'Not an integer or decimal.', float)
 
@@ -75,10 +79,16 @@ if __name__ == "__main__":
                                   'Not an integer or decimal.', float)
             cone_volume(user_height, user_radius)
 
-        if which_volume == 'SQRT':
+        if which_calc == 'SQRT':
             print('\nWhat is the root?')
             root_num = ask_for('\n: ', 'Not a number', float)
             square_root(root_num)
+
+        if which_calc == 'HYPOTEN':
+            print('\nWhat is A and B?')
+            a = ask_for(': ', 'not a number', float)
+            b = ask_for(': ', 'not a number', float)
+            hypotenuse(a, b)
 
     # * Calling main function
     main()
